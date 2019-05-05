@@ -1,0 +1,71 @@
+plugins {
+    id 'com.gradle.plugin-publish' version '0.10.1'
+    id "luisrjaeger.android-auto-versioning" version "1.0.0"
+    id 'java-gradle-plugin'
+    //id 'maven-publish'
+    id 'groovy'
+}
+
+description 'Gradle plugin that create tasks to post messages on Slack WebHook'
+group 'br.com.luisrjaeger'
+version androidVersion.versionName()
+ext.pluginId = 'luisrjaeger.slack-messaging'
+
+androidVersion {
+    versionCycle = 100
+    releaseNotesFileName = null
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.google.code.gson:gson:2.8.5'
+}
+
+gradlePlugin {
+    plugins {
+        slackMessagingPlugin {
+            id = project.pluginId
+            implementationClass = project.group + '.slack.SlackMessagingPlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/luisrjaeger'
+    vcsUrl = 'https://github.com/luisrjaeger/slack-messaging'
+    description = project.description
+    tags = ['slack', 'messaging', 'webhook']
+    plugins {
+        slackMessagingPlugin {
+            displayName = 'Slack Messaging'
+        }
+    }
+}
+/*
+publishing {
+    publications {
+        pluginPublication (MavenPublication) {
+            from        components.java
+            groupId     project.group
+            artifactId  project.name
+            version     project.version
+        }
+    }
+    repositories {
+        maven {
+            url "http://as275.lojasrenner.com.br:8082/artifactory/plugins-release-local"
+        }
+    }
+}
+
+project.afterEvaluate {
+    publishPluginMavenPublicationToMavenRepository {
+        dependsOn('increaseVersion')
+    }
+}
+*/
