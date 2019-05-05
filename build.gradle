@@ -2,7 +2,7 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.10.1'
     id "luisrjaeger.android-auto-versioning" version "1.0.0"
     id 'java-gradle-plugin'
-    //id 'maven-publish'
+    id 'maven-publish'
     id 'groovy'
 }
 
@@ -46,7 +46,7 @@ pluginBundle {
         }
     }
 }
-/*
+
 publishing {
     publications {
         pluginPublication (MavenPublication) {
@@ -62,10 +62,3 @@ publishing {
         }
     }
 }
-
-project.afterEvaluate {
-    publishPluginMavenPublicationToMavenRepository {
-        dependsOn('increaseVersion')
-    }
-}
-*/
