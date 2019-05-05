@@ -57,4 +57,4 @@ slack {
 }
 ```
 
-These DSL will generate two tasks `postPublishedPluginToSlack` and `postBuiltSuccedToSlack`.
+These DSL will generate two tasks `postPublishedPluginToSlack` and `postBuiltSucceedToSlack`.
