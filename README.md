@@ -2,7 +2,9 @@
 Slack plugin for Gradle
 
 # Usage
-Simplified version of jongyoul's Slack Gradle Plugin: https://github.com/jongyoul/gradle-slack-plugin
+Simplified version for my purposes of full capable jongyoul's Slack Gradle Plugin: https://github.com/jongyoul/gradle-slack-plugin
+
+
 Thanks jongyoul for sharing your code!
 
 My version creates a task for each message you place on DSL as this example shows.
