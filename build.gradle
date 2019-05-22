@@ -1,6 +1,6 @@
 plugins {
     id 'com.gradle.plugin-publish' version '0.10.1'
-    id "luisrjaeger.android-auto-versioning" version "1.0.0"
+    id "luisrjaeger.auto-versioning" version "1.0.3"
     id 'java-gradle-plugin'
     id 'maven-publish'
     id 'groovy'
@@ -8,10 +8,10 @@ plugins {
 
 description 'Gradle plugin that create tasks to post messages on Slack WebHook'
 group 'br.com.luisrjaeger'
-version androidVersion.versionName()
+version autoVersion.versionName()
 ext.pluginId = 'luisrjaeger.slack-messaging'
 
-androidVersion {
+autoVersion {
     versionCycle = 100
     releaseNotesFileName = null
 }
@@ -58,7 +58,7 @@ publishing {
     }
     repositories {
         maven {
-            url "http://as275.lojasrenner.com.br:8082/artifactory/plugins-release-local"
+            url mavenRepoUrl
         }
     }
 }
