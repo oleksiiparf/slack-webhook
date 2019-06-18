@@ -16,7 +16,13 @@ class Message {
 
     String username
 
+    String threadTs
+
+    Boolean mrkdwn
+
     def attachments = []
+
+    def blocks = []
 
     Message(String name) {
         this.name = name
@@ -27,6 +33,14 @@ class Message {
         Attachment attachment = new Attachment()
         closure.delegate = attachment
         attachments << attachment
+        closure()
+    }
+
+    void block(Closure closure) {
+        closure.resolveStrategy = Closure.DELEGATE_FIRST
+        Block block = new Block()
+        closure.delegate = block
+        blockss << block
         closure()
     }
 

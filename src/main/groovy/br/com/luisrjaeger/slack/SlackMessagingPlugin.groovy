@@ -15,6 +15,8 @@ class SlackMessagingPlugin implements Plugin<Project> {
         messages.all { message ->
             project.tasks.create("post${message.name.capitalize()}ToSlack", SlackTask) { task ->
                 messageToSend = message
+
+                group 'slack'
                 description "Publish ${message.name} message to slack"
             }
         }

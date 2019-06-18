@@ -1,6 +1,6 @@
 plugins {
     id 'com.gradle.plugin-publish' version '0.10.1'
-    id "luisrjaeger.auto-versioning" version "1.0.3"
+    id "luisrjaeger.auto-versioning" version "1.0.6"
     id 'java-gradle-plugin'
     id 'maven-publish'
     id 'groovy'
@@ -36,7 +36,7 @@ gradlePlugin {
 }
 
 pluginBundle {
-    website = 'https://github.com/luisrjaeger'
+    website = 'https://github.com/luisrjaeger/slack-messaging'
     vcsUrl = 'https://github.com/luisrjaeger/slack-messaging'
     description = project.description
     tags = ['slack', 'messaging', 'webhook']
