@@ -1,6 +1,8 @@
 # slack-messaging
 Slack plugin for Gradle
 
+https://plugins.gradle.org/plugin/luisrjaeger.slack-messaging
+
 # Usage
 This plugin supports whole message structure of current slack. You can find full docs here: https://api.slack.com/docs/messages
 
