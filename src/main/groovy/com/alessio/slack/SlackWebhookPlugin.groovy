@@ -1,11 +1,11 @@
-package br.com.luisrjaeger.slack
+package com.alessio.slack
 
-import br.com.luisrjaeger.slack.model.Message
-import br.com.luisrjaeger.slack.task.SlackTask
+import com.alessio.slack.model.Message
+import com.alessio.slack.task.SlackTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class SlackMessagingPlugin implements Plugin<Project> {
+class SlackWebhookPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {

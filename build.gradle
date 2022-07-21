@@ -1,15 +1,13 @@
 plugins {
-    id 'com.gradle.plugin-publish' version '0.10.1'
+    id "com.gradle.plugin-publish" version "1.0.0"
     id "luisrjaeger.auto-versioning" version "1.0.6"
-    id 'java-gradle-plugin'
-    id 'maven-publish'
     id 'groovy'
 }
 
-description 'Gradle plugin that create tasks to post messages on Slack WebHook'
-group 'br.com.luisrjaeger'
+description 'Gradle plugin that create tasks to post messages on Slack Webhook'
+group 'alessio.slack-webhook'
 version autoVersion.versionName()
-ext.pluginId = 'luisrjaeger.slack-messaging'
+ext.pluginId = 'alessio.slack-webhook'
 
 autoVersion {
     versionCycle = 100
@@ -26,39 +24,21 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 }
 
+// Specify plugin properties that apply to the whole publishing bundle (ie. all plugins in the current publication).
+pluginBundle {  // Removed in Gradle 8+
+    website = 'https://gitlab.com/alessio.parfenjuk/slack-webhook'
+    vcsUrl = 'https://gitlab.com/alessio.parfenjuk/slack-webhook'
+    description = project.description
+    tags = ['slack', 'webhook']
+}
+
 gradlePlugin {
     plugins {
-        slackMessagingPlugin {
+        slackWebhookPlugin {
             id = project.pluginId
-            implementationClass = project.group + '.slack.SlackMessagingPlugin'
-        }
-    }
-}
-
-pluginBundle {
-    website = 'https://github.com/luisrjaeger/slack-messaging'
-    vcsUrl = 'https://github.com/luisrjaeger/slack-messaging'
-    description = project.description
-    tags = ['slack', 'messaging', 'webhook']
-    plugins {
-        slackMessagingPlugin {
-            displayName = 'Slack Messaging'
-        }
-    }
-}
-
-publishing {
-    publications {
-        pluginPublication (MavenPublication) {
-            from        components.java
-            groupId     project.group
-            artifactId  project.name
-            version     project.version
-        }
-    }
-    repositories {
-        maven {
-            url mavenRepoUrl
+            description = project.description
+            displayName = 'Slack Webhook'
+            implementationClass = 'com.alessio.slack.SlackWebhookPlugin'
         }
     }
 }

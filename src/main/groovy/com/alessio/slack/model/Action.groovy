@@ -1,4 +1,4 @@
-package br.com.luisrjaeger.slack.model
+package com.alessio.slack.model
 
 class Action {
 

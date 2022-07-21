@@ -1,14 +1,15 @@
-package br.com.luisrjaeger.slack.task
+package com.alessio.slack.task
 
-import br.com.luisrjaeger.slack.model.Message
+import com.alessio.slack.model.Message
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.TaskAction
 
 class SlackTask extends DefaultTask {
 
-    Message messageToSend
+    @Internal Message messageToSend
 
     SlackTask() { }
 
