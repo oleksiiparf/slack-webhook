@@ -5,9 +5,9 @@ plugins {
 }
 
 description 'Gradle plugin that create tasks to post messages on Slack Webhook'
-group 'alessio.slack-webhook'
+group 'AlexParfenjuk.slack-webhook'
 version autoVersion.versionName()
-ext.pluginId = 'alessio.slack-webhook'
+ext.pluginId = 'AlexParfenjuk.slack-webhook'
 
 autoVersion {
     versionCycle = 100
@@ -25,11 +25,11 @@ dependencies {
 }
 
 // Specify plugin properties that apply to the whole publishing bundle (ie. all plugins in the current publication).
-pluginBundle {  // Removed in Gradle 8+
-    website = 'https://gitlab.com/alessio.parfenjuk/slack-webhook'
-    vcsUrl = 'https://gitlab.com/alessio.parfenjuk/slack-webhook'
+pluginBundle {
+    website = 'https://github.com/AlexParfenjuk/slack-webhook'
+    vcsUrl = 'https://github.com/AlexParfenjuk/slack-webhook'
     description = project.description
-    tags = ['slack', 'webhook']
+    tags = ['slack', 'webhook', 'message']
 }
 
 gradlePlugin {

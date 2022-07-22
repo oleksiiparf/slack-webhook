@@ -1,4 +1,4 @@
-# slack-messaging
+# slack-webhook
 Slack plugin for Gradle
 
 https://plugins.gradle.org/plugin/alessio.slack-webhook
