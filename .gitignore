@@ -1,0 +1,19 @@
+# IDEA
+*.iml
+.idea/
+*.classpath
+*.project
+*.settings/
+bin/
+
+
+# Gradle
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+out/
+gradle.properties
+
+# Mac
+*.DS_Store
