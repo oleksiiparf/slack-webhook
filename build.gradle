@@ -5,9 +5,9 @@ plugins {
 }
 
 description 'Gradle plugin that create tasks to post messages on Slack Webhook'
-group 'AlexParfenjuk.slack-webhook'
+group 'io.github.oleksiiparf.slack-webhook'
 version autoVersion.versionName()
-ext.pluginId = 'AlexParfenjuk.slack-webhook'
+ext.pluginId = 'io.github.oleksiiparf.slack-webhook'
 
 autoVersion {
     versionCycle = 100
@@ -26,8 +26,8 @@ dependencies {
 
 // Specify plugin properties that apply to the whole publishing bundle (ie. all plugins in the current publication).
 pluginBundle {
-    website = 'https://github.com/AlexParfenjuk/slack-webhook'
-    vcsUrl = 'https://github.com/AlexParfenjuk/slack-webhook'
+    website = 'https://github.com/oleksiiparf/slack-webhook'
+    vcsUrl = 'https://github.com/oleksiiparf/slack-webhook'
     description = project.description
     tags = ['slack', 'webhook', 'message']
 }

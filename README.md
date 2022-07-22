@@ -1,7 +1,7 @@
 # slack-webhook
 Slack plugin for Gradle
 
-https://plugins.gradle.org/plugin/alessio.slack-webhook
+https://plugins.gradle.org/plugin/io.github.oleksiiparf.slack-webhook
 
 # Usage
 This plugin supports whole message structure of current slack. You can find full docs here: https://api.slack.com/docs/messages
